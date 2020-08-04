@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
   /**Variable que encapsula el arreglo de departamentos */
   departamentos = [];
   selectedDepartamento: string;
+  selectedLocalizacionId: string;
 
   constructor(private dataService: DataService) {}
 

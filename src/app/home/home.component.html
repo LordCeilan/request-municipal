@@ -21,13 +21,13 @@
          <mat-spinner *ngIf="departamentos.length === 0"></mat-spinner>
          <mat-form-field appearance="fill">
            <mat-label>Departamentos</mat-label>
-           <mat-select [(value)] = "selectedDepartamento"> 
+           <mat-select [(value)] = selectedDepartamento> 
              <mat-option>Selección</mat-option>
-             <mat-option *ngFor="let departamento of departamentos" [value] = departamento.descripcion>
+             <mat-option *ngFor="let departamento of departamentos" [value] = departamento.localizacionId >
                {{ departamento.descripcion }}
              </mat-option>   
            </mat-select>
          </mat-form-field>
-         <p> Has seleccionado a: {{selectedDepartamento}}</p>
+         <p> Has seleccionado al departamento con id : {{selectedDepartamento}} </p>
  </div>
  
