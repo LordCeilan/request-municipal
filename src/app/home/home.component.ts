@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+/**Importo el servicio DataService */
+import { DataService} from '../data.service';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  
+  /**Variable que encapsula el arreglo de departamentos */
+  departamentos = [];
+  selectedDepartamento: string;
 
-  ngOnInit(): void {
+  constructor(private dataService: DataService) {}
+
+  ngOnInit() {
+    this.dataService.sendGetRequest().subscribe((data: any[]) =>{
+      console.log(data);
+      this.departamentos = data;
+    } )
   }
-
 }

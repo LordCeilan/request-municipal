@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div style="padding: 13px;">
+    <!-- <mat-spinner *ngIf="departamentos.length === 0"></mat-spinner>
+ 
+ 
+     
+     <mat-card *ngFor="let departamento of departamentos" style="margin-top:10px;">
+         <mat-card-header>
+             <mat-card-title>{{ departamento.descripcion }}</mat-card-title>
+          
+ 
+         </mat-card-header>
+ 
+         <mat-card-actions>
+             <button mat-button> {{ departamento.localizacionId }}</button>
+         </mat-card-actions>
+     </mat-card>
+     -->
+   
+    
+         <h4>Basic mat-select</h4>
+         <mat-spinner *ngIf="departamentos.length === 0"></mat-spinner>
+         <mat-form-field appearance="fill">
+           <mat-label>Departamentos</mat-label>
+           <mat-select [(value)] = "selectedDepartamento"> 
+             <mat-option>Selección</mat-option>
+             <mat-option *ngFor="let departamento of departamentos" [value] = departamento.descripcion>
+               {{ departamento.descripcion }}
+             </mat-option>   
+           </mat-select>
+         </mat-form-field>
+         <p> Has seleccionado a: {{selectedDepartamento}}</p>
+ </div>
+ 
